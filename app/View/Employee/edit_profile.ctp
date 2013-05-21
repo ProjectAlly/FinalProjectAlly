@@ -65,7 +65,11 @@
 					echo "<div class=\"control-group\">";
 						echo $this->Form->label('work_email', 'Work Email', array('class' => 'control-label'));
 						echo $this->Form->input('work_email', array('label' => false,
-																'value' => $proUser['Profile']['work_email']));
+																'value' => $proUser['Profile']['work_email'], 
+																'type' => 'email', 'required'), array('div' => array('class' => 'controls')));
+					?>
+					<p class="help-block"></p>
+					<?php 	
 					echo "</div>";
 					
 					?>
@@ -81,13 +85,18 @@
 					echo "<div class=\"control-group\">";
 						echo $this->Form->label('user_mobile', 'Mobile', array('class' => 'control-label'));
 						echo $this->Form->input('user_mobile', array('label' => false,
-																'value' => $proUser['Profile']['user_mobile']));
+																'value' => $proUser['Profile']['user_mobile'],
+																	));
 					echo "</div>";
 					
 					echo "<div class=\"control-group\">";
 						echo $this->Form->label('user_home', 'Home', array('class' => 'control-label'));
 						echo $this->Form->input('user_home', array('label' => false,
-																'value' => $proUser['Profile']['user_home']));
+																'value' => $proUser['Profile']['user_home'], 
+																	), array('div' => array('class' => 'controls')));
+					?>
+					<p class="help-block"></p>
+					<?php 	
 					echo "</div>";
 					
 					echo "<div class=\"control-group\">";
