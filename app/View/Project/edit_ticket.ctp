@@ -1,3 +1,10 @@
+<!--validation code starts here-->
+<?php
+echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <div class="row-fluid">
     <div class="span12">
         <!-- Main content -->
@@ -9,20 +16,28 @@
                 echo $this->Form->create('Ticket',array('class' => 'form-horizontal',
 									                    'url' => array('controller' => 'Project',
 									                                   'action' => 'editTicket', $ticket['BugAndFeature']['id'], $projectid)));
-            	echo $this->Form->input('id', array('type' => 'hidden', 'value' => $ticket['BugAndFeature']['id']))
+            ?>
+            <?php
+                echo $this->Form->input('id', array('type' => 'hidden', 'value' => $ticket['BugAndFeature']['id']))
             ?>
             <table>
                 <tr>
                     <td><label>Title</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
-                            echo $this->Form->input('title',array('label'=>false, 'value' => $ticket['BugAndFeature']['title']));
+                            echo $this->Form->input('title',array('label'=>false, 'value' => $ticket['BugAndFeature']['title'],'required'));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Description</label></td>
-                    <td><?php echo $this->Form->textarea('description',array('label'=>false, 'value' => $ticket['BugAndFeature']['description'])); ?></td>
+                    <div class="control-group">
+                    <td><?php echo $this->Form->textarea('description',array('label'=>false, 'value' => $ticket['BugAndFeature']['description'],'required')); ?></td>
+                        <p class="help-block"></p>
+                    </div>
                 </tr>
                 <?php $reportedby = $this->Session->read('name'); ?>
                 <?php $id_reportedby = $this->Session->read('id'); ?>
@@ -57,44 +72,61 @@
                 <tr>
                     <td><label>Priority</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('priority_id',array('label'=>false,
 									                                 'options' => $priority,
-                            										 'value' => $ticket['BugAndFeature']['priority_id']	
+                            										 'value' => $ticket['BugAndFeature']['priority_id'],
+                                                                     'required'
 									                                 ));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Assigned To</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('assigned_to',array('label'=>false,
 										                                'options' => $assignedto, 
-                            											'value' => $ticket['BugAndFeature']['assigned_to']
+                            											'value' => $ticket['BugAndFeature']['assigned_to'],
+                                                                        'required'
 										                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Milestone</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('milestone_id',array('label'=>false,
 									                                'options' => $milestone,
-									                                'value' => $ticket['BugAndFeature']['milestone_id']
+									                                'value' => $ticket['BugAndFeature']['milestone_id'],
+                                                                    'required'
 									                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Estimate</label></td>
-                    <td><?php
+                    <td>
+                    <div class="control-group">
+                        <?php
                             echo $this->Form->input('estimate',array('label'=>false,
 									                                'options' => $estimate,
-									                                'value' => $ticket['BugAndFeature']['estimate']
+									                                'value' => $ticket['BugAndFeature']['estimate'],
+                                                                    'required'
 									                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>

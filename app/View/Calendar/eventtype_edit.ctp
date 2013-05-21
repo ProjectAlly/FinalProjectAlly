@@ -1,3 +1,10 @@
+<!--validation code starts here-->
+<?php
+    echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <div class="row-fluid">
 	<div class="eventTypes form well span6">
 	<?php echo $this->Form->create('EventType');?>
@@ -5,7 +12,7 @@
 		<legend>Edit Event Type</legend>
 		<?php
 			echo $this->Form->input('id');
-			echo $this->Form->input('name');
+			echo $this->Form->input('name', array('required'));
 			echo $this->Form->input('color', 
 						array('options' => array(
 							'Blue' => 'Blue',

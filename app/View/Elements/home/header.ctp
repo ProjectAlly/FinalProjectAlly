@@ -29,10 +29,11 @@
 					<li class="<?php if($cont == 'Project'){ echo "active"; }?>">
 			            <?php echo $this->Html->link('Project Management', array('controller' => 'Project', 'action' => 'listProject'))?>
 			        </li>
-		        
+		        	<?php if($role >=3):?>
 		            <li class="<?php if($cont == 'Employee'){ echo "active"; }?>">
 		                <?php echo $this->Html->link('Employee Management', array('controller' => 'Employee', 'action' => 'index'))?>
 		            </li>
+		            <?php endif; ?>
 					<li class="<?php if($cont == 'Calendar'){ echo "active"; }?>">
 			            <?php echo $this->Html->link('Calendar', array('controller' => 'Calendar', 'action' => 'index'))?>
 			        </li>

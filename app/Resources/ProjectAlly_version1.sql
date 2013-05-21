@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 19, 2013 at 08:22 PM
--- Server version: 5.5.20
--- PHP Version: 5.3.10
+-- Generation Time: May 21, 2013 at 06:14 PM
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -40,21 +39,20 @@ CREATE TABLE IF NOT EXISTS `bugs_and_features` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `bugs_and_features`
 --
 
 INSERT INTO `bugs_and_features` (`id`, `reported_by`, `status`, `priority_id`, `assigned_to`, `milestone_id`, `title`, `description`, `estimate`, `project_id`, `created`, `modified`) VALUES
-(1, '7', '3', 1, 8, 1, 'Test Employee system', 'Testing', 4, 2, '2013-05-18 19:56:30', '2013-05-18 19:56:30'),
-(2, '7', '3', 2, 8, 2, 'Front Page PSD', 'create PSD file of front page', 2, 6, '2013-05-19 19:35:40', '2013-05-19 19:35:40'),
-(3, '7', '3', 2, 13, 2, 'Front Page HTML', 'convert the PSD into html and css', 2, 6, '2013-05-19 19:40:33', '2013-05-19 19:40:33'),
-(4, '7', '3', 3, 13, 2, 'Add Jquery animations', 'Implement slider and menus using jquery', 2, 6, '2013-05-19 19:46:40', '2013-05-19 19:46:40'),
-(5, '7', '3', 1, 7, 3, 'Design DB schema', '', 3, 6, '2013-05-19 19:51:13', '2013-05-19 19:51:13'),
-(6, '7', '3', 4, 10, 4, 'Content for home and about us', 'Home page should include introdution and about us will include company''s profile and details about project', 2, 6, '2013-05-19 20:00:30', '2013-05-19 20:00:30'),
-(7, '7', '3', 3, 13, 5, 'Slider not working', 'slider is not working properly when internet connections is not there.', 2, 6, '2013-05-19 20:05:12', '2013-05-19 20:05:12'),
-(8, '7', '3', 2, 8, 6, 'Video Uploader not working', 'Videos aren''t getting uploaded', 3, 5, '2013-05-19 20:22:09', '2013-05-19 20:22:09');
+(9, '7', '3', 1, 8, 7, 'Modification in design', 'Modify design looking at the PSD attached.', 3, 8, '2013-05-21 17:21:04', '2013-05-21 17:21:04'),
+(10, '7', '3', 3, 8, 7, 'Add the new images', 'Search new image for landing page and gallery', 2, 8, '2013-05-21 17:22:12', '2013-05-21 17:22:12'),
+(11, '7', '3', 1, 11, 8, 'Change in table', 'Data is not fetched properly due to id mismatch make it perfect.', 3, 8, '2013-05-21 17:23:21', '2013-05-21 17:23:21'),
+(12, '8', '3', 3, 11, 9, 'Content modification', 'Change the content as per files specified', 2, 8, '2013-05-21 17:26:20', '2013-05-21 17:26:20'),
+(13, '15', '3', 1, 13, 10, 'Change the layout', 'Change the initial layout implementes', 3, 9, '2013-05-21 17:46:03', '2013-05-21 17:46:03'),
+(14, '15', '3', 3, 8, 11, 'Testing UI', 'Test implementation for any conflicts and if there report them.', 2, 9, '2013-05-21 17:46:58', '2013-05-21 17:46:58'),
+(15, '8', '3', 3, 13, 11, 'Conflict', 'Jquery conflict on Home page.', 3, 9, '2013-05-21 17:49:05', '2013-05-21 17:49:05');
 
 -- --------------------------------------------------------
 
@@ -72,7 +70,12 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `modified` datetime DEFAULT NULL,
   `modifier_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `comments`
+--
+
 
 -- --------------------------------------------------------
 
@@ -116,19 +119,23 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=64 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `event_type_id`, `profile_id`, `title`, `details`, `start`, `end`, `all_day`, `status`, `active`, `created`, `modified`) VALUES
-(58, 8, 8, 'Emergency', 'abcdefgh', '2013-05-22 15:30:52', '2013-05-23 15:31:13', 1, 'Approved', 1, '2013-05-19 10:01:18', '2013-05-19 10:01:18'),
-(59, 1, 8, 'UI Design', 'Ui designing of the project in photoshop and its conversion into HTML and css.', '2013-05-19 19:27:04', '2013-05-30 00:55:06', 0, 'Approved', 1, '2013-05-19 19:27:04', '2013-05-19 19:27:04'),
-(60, 1, 7, 'Database Schema', 'create tentative tables for the project and establish relations between them', '2013-05-19 19:49:44', '2013-06-05 00:00:00', 0, 'Approved', 1, '2013-05-19 19:49:44', '2013-05-19 19:49:44'),
-(61, 1, 10, 'Content', 'Prepare content for project', '2013-05-19 19:53:17', '2013-05-25 01:22:44', 0, 'Approved', 1, '2013-05-19 19:53:17', '2013-05-19 19:53:17'),
-(62, 1, 8, 'Bugs', 'all the bugs related to 4th umpire should be reported here.', '2013-05-19 20:02:58', '2013-06-25 00:00:00', 0, 'Approved', 1, '2013-05-19 20:02:58', '2013-05-19 20:02:58'),
-(63, 1, 11, 'Bugs', 'All bugs related to clubwebsite should be maintained here.', '2013-05-19 20:21:13', '2013-06-30 00:00:00', 0, 'Approved', 1, '2013-05-19 20:21:13', '2013-05-19 20:21:13');
+(74, 1, 15, 'Testing Bugs', 'Report all bugs and testing issues.', '2013-05-30 17:37:00', '2013-06-30 23:07:00', 0, 'Approved', 1, '2013-05-21 17:37:40', '2013-05-21 17:38:17'),
+(73, 1, 9, 'Start initial implementation', 'Start implementation from the initial stage.', '2013-05-28 17:36:00', '2013-06-14 23:04:00', 0, 'Approved', 1, '2013-05-21 17:36:48', '2013-05-21 17:38:11'),
+(72, 3, 8, 'ProjectAlly', 'Project and Employee management Tool purposed to integrate employee and projects.', '2013-05-28 17:28:00', '2013-07-06 00:00:00', 0, 'Approved', 1, '2013-05-21 17:28:24', '2013-05-21 17:28:57'),
+(71, 1, 7, 'Content ', 'Set the content given.', '2013-05-21 17:17:24', '2013-05-29 22:46:40', 0, 'Approved', 1, '2013-05-21 17:17:24', '2013-05-21 17:17:24'),
+(70, 1, 11, 'Database Schema', 'Complete the database schema and enter dummies to test if every thing is working perfectly.', '2013-05-12 17:15:00', '2013-05-17 22:43:00', 0, 'Approved', 1, '2013-05-21 17:15:25', '2013-05-21 17:18:22'),
+(69, 1, 8, 'UI Design', 'Make necessary changes in the UI as per the data provided.', '2013-05-21 17:10:16', '2013-05-25 22:39:04', 0, 'Approved', 1, '2013-05-21 17:10:16', '2013-05-21 17:10:16'),
+(68, 3, 7, 'Club website', 'Football Club management website used to manage Leagues and matches between clubs all around the country.', '2013-04-28 17:05:00', '2013-05-29 00:00:00', 0, 'Approved', 1, '2013-05-21 17:05:40', '2013-05-21 17:06:19'),
+(75, 2, 8, 'Not feeling well', 'Having fever and anxiety.', '2013-05-22 23:19:29', '2013-05-23 23:19:29', 1, 'Approved', 1, '2013-05-21 17:51:07', '2013-05-21 17:51:07'),
+(76, 4, 13, 'Family fuction', 'need to go out of town due to family function.', '2013-05-29 23:32:46', '2013-05-30 23:33:21', 1, 'In Progress', 1, '2013-05-21 18:03:29', '2013-05-21 18:03:29'),
+(77, 4, 13, 'Emergency', 'Family issues', '2013-05-27 23:36:12', '2013-05-29 23:36:12', 0, 'In Progress', 1, '2013-05-21 18:07:19', '2013-05-21 18:07:19');
 
 -- --------------------------------------------------------
 
@@ -170,19 +177,18 @@ CREATE TABLE IF NOT EXISTS `milestones` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `milestones`
 --
 
 INSERT INTO `milestones` (`id`, `responsible_user`, `title`, `due_date`, `description`, `project_id`, `created`, `modified`) VALUES
-(1, 8, 'Milestone 1', '2013-05-24', 'This is for testing', 2, '2013-05-18 19:47:57', '2013-05-18 19:47:57'),
-(2, 8, 'UI Design', '2013-05-30', 'Ui designing of the project in photoshop and its conversion into HTML and css.', 6, '2013-05-19 19:27:04', '2013-05-19 19:27:04'),
-(3, 7, 'Database Schema', '2013-06-05', 'create tentative tables for the project and establish relations between them', 6, '2013-05-19 19:49:44', '2013-05-19 19:49:44'),
-(4, 10, 'Content', '2013-05-25', 'Prepare content for project', 6, '2013-05-19 19:53:17', '2013-05-19 19:53:17'),
-(5, 8, 'Bugs', '2013-06-25', 'all the bugs related to 4th umpire should be reported here.', 6, '2013-05-19 20:02:58', '2013-05-19 20:02:58'),
-(6, 11, 'Bugs', '2013-06-30', 'All bugs related to clubwebsite should be maintained here.', 5, '2013-05-19 20:21:13', '2013-05-19 20:21:13');
+(7, 8, 'UI Design', '2013-05-25', 'Make necessary changes in the UI as per the data provided.', 8, '2013-05-21 17:10:16', '2013-05-21 17:10:16'),
+(8, 11, 'Database Schema', '2013-05-17', 'Complete the database schema and enter dummies to test if every thing is working perfectly.', 8, '2013-05-21 17:15:25', '2013-05-21 17:15:25'),
+(9, 7, 'Content ', '2013-05-29', 'Set the content given.', 8, '2013-05-21 17:17:24', '2013-05-21 17:17:24'),
+(10, 9, 'Start initial implementation', '2013-06-14', 'Start implementation from the initial stage.', 9, '2013-05-21 17:36:48', '2013-05-21 17:36:48'),
+(11, 15, 'Testing Bugs', '2013-06-30', 'Report all bugs and testing issues.', 9, '2013-05-21 17:37:40', '2013-05-21 17:37:40');
 
 -- --------------------------------------------------------
 
@@ -229,6 +235,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `user_address` varchar(255) NOT NULL,
   `user_mobile` varchar(255) NOT NULL,
   `user_home` varchar(255) NOT NULL,
+  `user_photo` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -238,16 +245,16 @@ CREATE TABLE IF NOT EXISTS `profile` (
 -- Dumping data for table `profile`
 --
 
-INSERT INTO `profile` (`id`, `user_name`, `company_name`, `user_role`, `input_email`, `input_password`, `status`, `leave_request`, `leave_taken`, `user_dob`, `user_gender`, `work_email`, `user_address`, `user_mobile`, `user_home`, `created`, `modified`) VALUES
-(7, 'Hardik Shah', 'Aecortech', 1, 'hardik@gmail.com', 'testtest', 1, 0, 0, '', '', '', '', '', '', '2013-05-17 11:57:01', '2013-05-17 11:57:01'),
-(8, 'Akash Bhardwaj', 'Aecortech', 2, 'akash@gmail.com', 'akash123', 1, 2, 1, '', '', '', '', '', '', '2013-05-17 12:00:03', '2013-05-17 12:00:03'),
-(9, 'Manali Pohani', 'Aecortech', 3, 'manali@gmail.com', 'manali123', 0, 0, 0, '', '', '', '', '', '', '2013-05-17 12:01:54', '2013-05-17 12:01:54'),
-(10, 'Dan Pope', 'Clubwebsite', 4, 'dan@gmail.com', 'dan123', 1, 0, 0, '', '', '', '', '', '', '2013-05-17 12:05:34', '2013-05-17 12:05:34'),
-(11, 'Jon F', 'Clubwebsite', 4, 'jon@gmail.com', 'jon123', 1, 0, 0, '', '', '', '', '', '', '2013-05-17 12:09:04', '2013-05-17 12:09:04'),
-(12, 'Ruchi Shah', 'Aecortech', 3, 'ruchi@gmail.com', 'ruchi123', 0, 0, 0, '', '', '', '', '', '', '2013-05-17 12:11:28', '2013-05-17 12:11:28'),
-(13, 'Sonal Dubey ', 'Aecortech', 3, 'sonal@gmail.com', 'sonal123', 1, 0, 0, '', '', '', '', '', '', '2013-05-17 12:12:01', '2013-05-17 12:12:01'),
-(14, 'Payal Shah', 'Aecortech', 3, 'payal@gmail.com', 'payal123', 0, 0, 0, '', '', '', '', '', '', '2013-05-17 12:12:45', '2013-05-17 12:12:45'),
-(15, 'Ankur Pandit', 'Aecortech', 3, 'ankur@gmail.com', 'ankur123', 0, 0, 0, '', '', '', '', '', '', '2013-05-17 12:13:16', '2013-05-17 12:13:16');
+INSERT INTO `profile` (`id`, `user_name`, `company_name`, `user_role`, `input_email`, `input_password`, `status`, `leave_request`, `leave_taken`, `user_dob`, `user_gender`, `work_email`, `user_address`, `user_mobile`, `user_home`, `user_photo`, `created`, `modified`) VALUES
+(7, 'Hardik Shah', 'Aecortech', 1, 'hardik@gmail.com', 'testtest', 1, 0, 0, '', '', '', '', '', '', '', '2013-05-17 11:57:01', '2013-05-17 11:57:01'),
+(8, 'Akash Bhardwaj', 'Aecortech', 2, 'akash@gmail.com', 'akash123', 1, 0, 2, '', '', '', '', '', '', '', '2013-05-17 12:00:03', '2013-05-17 12:00:03'),
+(9, 'Manali Pohani', 'Aecortech', 3, 'manali@gmail.com', 'manali123', 1, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:01:54', '2013-05-17 12:01:54'),
+(10, 'Dan Pope', 'Clubwebsite', 4, 'dan@gmail.com', 'dan123', 1, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:05:34', '2013-05-17 12:05:34'),
+(11, 'Jon F', 'Clubwebsite', 4, 'jon@gmail.com', 'jon123', 1, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:09:04', '2013-05-17 12:09:04'),
+(12, 'Ruchi Shah', 'Aecortech', 3, 'ruchi@gmail.com', 'ruchi123', 0, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:11:28', '2013-05-17 12:11:28'),
+(13, 'Sonal Dubey ', 'Aecortech', 3, 'sonal@gmail.com', 'sonal123', 1, 2, 0, '', '', '', '', '', '', '', '2013-05-17 12:12:01', '2013-05-17 12:12:01'),
+(14, 'Payal Shah', 'Aecortech', 3, 'payal@gmail.com', 'payal123', 0, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:12:45', '2013-05-17 12:12:45'),
+(15, 'Ankur Pandit', 'Aecortech', 2, 'ankur@gmail.com', 'ankur123', 1, 0, 0, '', '', '', '', '', '', '', '2013-05-17 12:13:16', '2013-05-17 12:13:16');
 
 -- --------------------------------------------------------
 
@@ -263,15 +270,15 @@ CREATE TABLE IF NOT EXISTS `project` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `project`
 --
 
 INSERT INTO `project` (`id`, `project_name`, `project_description`, `due_date`, `created`, `modified`) VALUES
-(5, 'Club website', 'Football manager website', '0000-00-00', '2013-05-19 11:01:52', '2013-05-19 11:01:52'),
-(6, '4th Umpire', 'Project will be used to create, organize and maintain leagues for various registered cricked club teams.', '0000-00-00', '2013-05-19 19:13:44', '2013-05-19 19:13:44');
+(8, 'Club website', 'Football Club management website used to manage Leagues and matches between clubs all around the country.', '2013-05-29', '2013-05-21 17:05:40', '2013-05-21 17:05:40'),
+(9, 'ProjectAlly', 'Project and Employee management Tool purposed to integrate employee and projects.', '2013-06-29', '2013-05-21 17:28:23', '2013-05-21 17:28:23');
 
 -- --------------------------------------------------------
 
@@ -284,23 +291,20 @@ CREATE TABLE IF NOT EXISTS `project_members` (
   `project_id` int(11) NOT NULL,
   `profile_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `project_members`
 --
 
 INSERT INTO `project_members` (`id`, `project_id`, `profile_id`) VALUES
-(6, 5, 8),
-(7, 5, 11),
-(13, 5, 7),
-(14, 1, 10),
-(15, 2, 8),
-(16, 3, 8),
-(17, 6, 7),
-(18, 6, 13),
-(19, 6, 11),
-(20, 6, 8);
+(22, 8, 7),
+(23, 8, 8),
+(24, 8, 11),
+(25, 9, 13),
+(26, 9, 10),
+(27, 9, 15),
+(28, 9, 8);
 
 -- --------------------------------------------------------
 
@@ -336,20 +340,9 @@ CREATE TABLE IF NOT EXISTS `uploads` (
   `size` int(11) NOT NULL,
   `bugs_and_features_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `uploads`
 --
 
-INSERT INTO `uploads` (`id`, `attachment`, `size`, `bugs_and_features_id`) VALUES
-(1, 'profile_pic_7.jpg', 897932, 7),
-(2, 'profile_pic_7.jpg', 778077, 7),
-(3, 'profile_pic_7.jpg', 78457, 7),
-(4, 'profile_pic_7.jpg', 897932, 7),
-(5, 'profile_pic_7.jpg', 157385, 7),
-(6, 'profile_pic_7.jpg', 157385, 7);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

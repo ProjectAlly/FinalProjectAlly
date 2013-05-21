@@ -29,6 +29,9 @@ class HomeController extends AppController {
 		$title_for_layout = 'Home';
 		$this->set(compact('title_for_layout'));
 	}
+	public function aboutUs(){
+
+	}
 	
 	public function signIn(){
 	
