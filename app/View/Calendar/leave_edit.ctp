@@ -1,3 +1,10 @@
+<!--validation code starts here-->
+<?php
+    echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <?php echo $this->Html->script('bootstrap-datetimepicker.js'); ?>
 <?php echo $this->Html->css('bootstrap-datetimepicker.min.css'); ?>
 <div class="row-fluid">
@@ -11,10 +18,10 @@
 						'2' => 'Sick Leave', '4' => 'General Leave'
 						)));
 			echo $this->Form->input('profile_id', array('type' => 'hidden', 'value' => $this->Session->read('id')));
-			echo $this->Form->input('title');
-			echo $this->Form->input('details');
-			echo $this->Form->input('start', array('type'=>'text'));
-			echo $this->Form->input('end', array('type'=>'text'));
+			echo $this->Form->input('title', array('required'));
+			echo $this->Form->input('details', array('required'));
+			echo $this->Form->input('start', array('type'=>'text', 'required'));
+			echo $this->Form->input('end', array('type'=>'text', 'required'));
 			echo $this->Form->input('all_day');
 			echo $this->Form->input('status', array('value' => 'In Progress','type'=>'hidden'));
 		?>

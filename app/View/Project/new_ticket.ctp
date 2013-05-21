@@ -1,3 +1,10 @@
+<!--validation code starts here-->
+<?php
+echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <div class="row-fluid">
     <div class="span12">
         <!-- Main content -->
@@ -13,14 +20,21 @@
                 <tr>
                     <td><label>Title</label></td>
                     <td>
+                        <div class="control-group">
                         <?php
-                            echo $this->Form->input('title',array('label'=>false));
+                            echo $this->Form->input('title',array('label'=>false,'required'));
                         ?>
+                            <p class="help-block"></p>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Description</label></td>
-                    <td><?php echo $this->Form->textarea('description',array('label'=>false)); ?></td>
+                    <div class="control-group">
+                    <td><?php echo $this->Form->textarea('description',array('label'=>false,'required')); ?>
+                        <p class="help-block"></p>
+                    </div>
+                    </td>
                 </tr>
                 <?php $reportedby = $this->Session->read('name'); ?>
                 <?php $id_reportedby = $this->Session->read('id'); ?>
@@ -54,44 +68,61 @@
                 <tr>
                     <td><label>Priority</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('priority_id',array('label'=>false,
 									                                 'options' => $priority,
-									                                 'empty' => '===  Select priority of the bug ==='
+									                                 'empty' => '===  Select priority of the bug ===',
+                                                                     'required'
 									                                 ));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Assigned To</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('assigned_to',array('label'=>false,
 										                                'options' => $assignedto,
-										                                'empty' => '=== Select reponsible user  ==='
+										                                'empty' => '=== Select reponsible user  ===',
+                                                                        'required'
 										                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Milestone</label></td>
                     <td>
+                    <div class="control-group">
                         <?php
                             echo $this->Form->input('milestone_id',array('label'=>false,
 									                                'options' => $milestone,
-									                                'empty' => '=== Select a milestone  ==='
+									                                'empty' => '=== Select a milestone  ===',
+                                                                    'required'
 									                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td><label>Estimate</label></td>
-                    <td><?php
+                    <td>
+                    <div class="control-group">
+                        <?php
                             echo $this->Form->input('estimate',array('label'=>false,
 									                                'options' => $estimate,
-									                                'empty' => '=== Select a estimated size  ==='
+									                                'empty' => '=== Select a estimated size  ===',
+                                                                    'required'
 									                            	));
                         ?>
+                        <p class="help-block"></p>
+                    </div>
                     </td>
                 </tr>
                 <tr>

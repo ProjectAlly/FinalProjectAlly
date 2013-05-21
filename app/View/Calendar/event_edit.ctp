@@ -1,5 +1,12 @@
 <?php echo $this->Html->script('bootstrap-datetimepicker.js'); ?>
 <?php echo $this->Html->css('bootstrap-datetimepicker.min.css'); ?>
+<!--validation code starts here-->
+<?php
+    echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <div class="row-fluid">
 	<div class="events form well span6">
 	<?php echo $this->Form->create('Event');?>
@@ -8,10 +15,11 @@
 		<?php
 			echo $this->Form->input('id');
 			echo $this->Form->input('event_type_id');
-			echo $this->Form->input('title');
-			echo $this->Form->input('details');
-			echo $this->Form->input('start', array('type'=>'text'));
-			echo $this->Form->input('end', array('type'=>'text'));
+			echo $this->Form->input('title', array('required'));
+			echo $this->Form->input('details', array('required'));
+			echo $this->Form->input('start', array('type'=>'text','required'));
+			echo $this->Form->input('end', array('type'=>'text', 'required'));
+			
 			echo $this->Form->input('all_day');
 			echo $this->Form->input('status', array('options' => array(
 						'Scheduled' => 'Scheduled','Confirmed' => 'Confirmed','In Progress' => 'In Progress',

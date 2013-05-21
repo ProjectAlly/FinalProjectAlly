@@ -1,5 +1,12 @@
 <?php echo $this->Html->script('bootstrap-datetimepicker.js'); ?>
 <?php echo $this->Html->css('bootstrap-datetimepicker.min.css'); ?>
+<!--validation code starts here-->
+<?php
+    echo $this->Html->script('jqBootstrapValidation');
+?>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 <div class="row-fluid">
 	<div class="events form well span6">
 	<?php echo $this->Form->create('Event');?>
@@ -8,12 +15,16 @@
 		<?php
 			echo $this->Form->input('event_type_id');
 			echo $this->Form->input('profile_id', array('type' => 'hidden', 'value' => $this->Session->read('id')));
-			echo $this->Form->input('title');
-			echo $this->Form->input('details');
+			echo $this->Form->input('title', array('required'));
 			?>
+			<p class="help-block"></p>
+			<?php 
+			echo $this->Form->input('details', array('required'));
+			?>
+			<p class="help-block"></p>
 			<div id="datetimepicker1" class="input-append date">
 	         <label>Start</label>		
-			 <input data-format="yyyy/MM/dd hh:mm:ss" type="text" id="data[Event][start]" name="data[Event][start]"></input>
+			 <input data-format="yyyy/MM/dd hh:mm:ss" type="text" id="data[Event][start]" name="data[Event][start]" required></input>
 			 <span class="add-on">
 		      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
 		      </i>
@@ -29,7 +40,7 @@
 			</script>
 			<div id="datetimepicker2" class="input-append date">
 	         <label>End</label>		
-			 <input data-format="yyyy/MM/dd hh:mm:ss" type="text" id="data[Event][end]" name="data[Event][end]" />
+			 <input data-format="yyyy/MM/dd hh:mm:ss" type="text" id="data[Event][end]" name="data[Event][end]" required />
 			 		<span class="add-on">
 		      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
 		      </i>
