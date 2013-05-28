@@ -62,8 +62,7 @@ echo $this->Html->script('jqBootstrapValidation');
                     <td>
                         <?php
                             echo $this->Form->input('status',array( 'label'=>false,
-									                                'readonly' => 'readonly',
-									                                'options' => array('3' => 'new'),
+									                                'options' => $status,
                             										'value' => $ticket['BugAndFeature']['status']
 									                            ));
                         ?>

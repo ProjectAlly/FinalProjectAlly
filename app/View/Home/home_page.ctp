@@ -4,12 +4,12 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="span4 well">
-			<a href="http://stemma.in/du/" target="_blank" class="btn btn-large btn-primary">Print Document</a>
-                <?php
+			<?php 
 			//echo $this->Html->link('Print Document',array('controller' => 'Home', 'action' => 'printDocument'), array('class' => 'btn btn-large btn-primary'));
 			?>
+				<a href="http://stemma.in/du/" target="_blank" class="btn btn-large btn-primary">Print Document</a>
 			</div>
-			<!-- CODE FOR GENERATED FEEDS -->
+						<!-- CODE FOR GENERATED FEEDS -->
 			<div class="span8 well">
 			<h4>Feeds</h4>
 			<div class="tabbable tabs-left">
@@ -42,8 +42,15 @@
 										if($user['Profile']['id'] == $bugDetail['BugAndFeature']['assigned_to']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-user"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Assigned To ';
-											echo $this->Html->link($user['Profile']['user_name'],
+											if($user['Profile']['id'] == $this->Session->read('id')){
+												echo '<i>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+												echo '</i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
 																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 										endif;
 									endforeach;	
 									echo '<br/>';
@@ -51,8 +58,15 @@
 										if($user['Profile']['id'] == $bugDetail['BugAndFeature']['reported_by']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-book"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Reported By ';
-											echo $this->Html->link($user['Profile']['user_name'],
-																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+										if($user['Profile']['id'] == $this->Session->read('id')){
+											echo '<i><b>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											echo '</b></i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 										endif;
 									endforeach;	
 										echo '<br/>';
@@ -67,8 +81,15 @@
 										if($user['Profile']['id'] == $bugDetail['BugAndFeature']['assigned_to']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-user"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Assigned To ';
-											echo '<b>'.$this->Html->link($user['Profile']['user_name'],
-																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])).'</b>';
+										if($user['Profile']['id'] == $this->Session->read('id')){
+											echo '<i><b>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											echo '</b></i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 										endif;
 									endforeach;	
 									echo '<br/>';
@@ -76,8 +97,15 @@
 										if($user['Profile']['id'] == $bugDetail['BugAndFeature']['reported_by']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-book"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Reported By ';
-											echo $this->Html->link($user['Profile']['user_name'],
-																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+										if($user['Profile']['id'] == $this->Session->read('id')){
+											echo '<i><b>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											echo '</b></i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 										endif;
 									endforeach;	
 										echo '<br/>';
@@ -120,9 +148,18 @@
 														<tr>
 															<td>
 															<i class="icon-th-list"></i>
-															 <?php echo $this->Html->link($user['Profile']['user_name'],
-																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
-															
+															<?php 
+																if($user['Profile']['id'] == $this->Session->read('id')){
+																echo '<i><b>';
+																	echo $this->Html->link($user['Profile']['user_name'],
+																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+																echo '</b></i>';
+																}else {
+																	echo $this->Html->link($user['Profile']['user_name'],
+																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+																}
+															?>
+																</td>
 														</tr>
 													</tbody>
 												<?php 
@@ -147,8 +184,17 @@
 													<tbody>
 														<tr>
 															<i class="icon-th-list"></i>
-															<td> <?php echo $this->Html->link($user['Profile']['user_name'],
-																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
+															<td> <?php 
+																if($user['Profile']['id'] == $this->Session->read('id')){
+																echo '<i><b>';
+																	echo $this->Html->link($user['Profile']['user_name'],
+																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+																echo '</b></i>';
+																}else {
+																	echo $this->Html->link($user['Profile']['user_name'],
+																						array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+																}
+															?> </td>
 														</tr>
 													</tbody>
 												<?php 
@@ -185,8 +231,15 @@
 										if($user['Profile']['id'] == $milestoneDetail['Milestone']['responsible_user']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-user"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Responsible user ';
-											echo $this->Html->link($user['Profile']['user_name'],
-																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])).'</b>';
+										if($user['Profile']['id'] == $this->Session->read('id')){
+											echo '<i><b>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											echo '</b></i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 												echo '<br/>';
 										endif;
 									endforeach;	
@@ -200,8 +253,15 @@
 										if($user['Profile']['id'] == $milestoneDetail['Milestone']['responsible_user']):
 											echo '&nbsp;&nbsp;&nbsp;<i class="icon-user"></i>&nbsp;&nbsp;&nbsp;';
 											echo 'Responsible user';
-											echo $this->Html->link($user['Profile']['user_name'],
-																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											if($user['Profile']['id'] == $this->Session->read('id')){
+											echo '<i><b>';
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											echo '</b></i>';
+											}else {
+												echo $this->Html->link($user['Profile']['user_name'],
+																	array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
+											}
 											echo '<br/>';
 						
 										endif;

@@ -29,7 +29,7 @@
 					<li class="<?php if($cont == 'Project'){ echo "active"; }?>">
 			            <?php echo $this->Html->link('Project Management', array('controller' => 'Project', 'action' => 'listProject'))?>
 			        </li>
-		        	<?php if($role >=3):?>
+		        	<?php if($role <=3):?>
 		            <li class="<?php if($cont == 'Employee'){ echo "active"; }?>">
 		                <?php echo $this->Html->link('Employee Management', array('controller' => 'Employee', 'action' => 'index'))?>
 		            </li>

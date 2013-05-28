@@ -169,7 +169,9 @@
 		public function editTicket($ticket_id = null, $proj_id = null) {
             $this->set('projectid', $proj_id);
             $this->set('tickets', $this->BugAndFeature->find('all', array('conditions' => array('BugAndFeature.id' => $ticket_id))));
-	            
+	        $this->set('status',$this->Status->find('list',array(
+                'fields' => array('Status.type')
+            )));
             //fetching the values of priority
             $this->set('priority',$this->Priority->find('list',array(
                 'fields' => array('Priority.type')

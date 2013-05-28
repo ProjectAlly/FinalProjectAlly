@@ -152,7 +152,7 @@ class UploadFormHelper extends AppHelper {
 	    </form>
 	</div>
 	
-	<div id="modal-gallery" class="modal modal-gallery hide fade" data-filter=":odd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="modal" class="modal modal-gallery hide fade" data-filter=":odd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-header">
 	        <a class="close" data-dismiss="modal">&times;</a>
 	        <h3 class="modal-title"></h3>

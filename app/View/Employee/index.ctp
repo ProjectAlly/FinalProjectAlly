@@ -123,10 +123,10 @@ $role = $this->Session->read('role') ;
 				<?php 
 				if($role != 1){
 					$leave_in_percentage = (100 * $currentUser['Profile']['leave_taken'])/21;
-				
+                    $leave_in_decimal = 21 - $currentUser['Profile']['leave_taken'];
 					?>						
 					<div class="span7">
-						<strong>Time off's used in %</strong><span class="pull-right"><?php echo ceil($leave_in_percentage) ?>%</span>
+						<strong>Time off's remaining</strong><span class="pull-right"><?php echo ceil($leave_in_decimal) ?></span>
 					  	<div class="progress progress-warning active">
 					    	<div class="bar" style="width: <?php echo $leave_in_percentage ?>%"></div>
 						</div>
