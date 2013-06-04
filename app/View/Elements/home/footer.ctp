@@ -14,9 +14,7 @@
             <h4><i class="icon-beaker"></i> Developed By</h4>
             <nav>
               <ul class="quick-links">
-                  <li>Ruchi Shah</li>
                   <li>Sonal Dubey</li>
-                  <li>Payal Shah</li>
                   <li>Ankur Pandit</li>
               </ul>
             </nav>          

@@ -45,7 +45,7 @@
 	            	        </label>
 	                    </div>
 	                    <div class="pull-right">
-	                		<a href="#">Forgot password?</a>
+<!--	                		<a href="#">Forgot password?</a>-->
 	                    </div>
                     	<div class="clearfix"></div>
                   	</div>
@@ -55,7 +55,12 @@
 					?>		
                 
                 	<h4><i class="icon-question-sign"></i> Don't have an account?</h4>
-               		<a href="<?php $this->Html->url(array('controller' => 'Home', 'action' => 'signUp')); ?>" class="btn btn-large bottom-space">Signup</a>
+               		<?php
+                        echo $this->Html->link('SignUp',array('controller' => 'Home',
+                                                              'action' => 'signUp'),
+                                                              array('class' => 'btn btn-large bottom-space'));
+                    ?>
+<!--                    <a href="--><?php //$this->Html->url(array('controller' => 'Home', 'action' => 'signUp')); ?><!--" class="btn btn-large bottom-space">Signup</a>-->
                 </div>
             </div>
 		</div>

@@ -18,7 +18,7 @@
                       </h3>                      
                     </div>
                     <div class="span5">
-                      <img src="img/project-management.jpg" class="thumbnail">
+                      <img src="img/project-management.jpg" class="thumbnail" id="homepage">
                     </div>
                   </div>                  
                 </div>
@@ -35,11 +35,11 @@
                       <h3>
                           <?php echo $this->Html->link('Learn More', array('controller' => 'Home', 'action' => 'signUp'),
                                                                      array('class' => 'btn'));?>
-                          <br>
+
                       </h3>                      
                     </div>
                     <div class="span5">
-                      <img src="img/employee-management.jpg" class="thumbnail">
+                      <img src="img/employee-management.jpg" class="thumbnail" id="homepage">
                     </div>
                   </div>                  
                 </div>
@@ -59,7 +59,7 @@
                       </h3>                      
                     </div>
                     <div class="span5">
-                      <img src="img/bugtracker.jpg" class="thumbnail">
+                      <img src="img/bugtracker.jpg" class="thumbnail" id="homepage">
                     </div>
                   </div>                  
                 </div>
@@ -75,11 +75,11 @@
                       <h3>
                           <?php echo $this->Html->link('Learn More', array('controller' => 'Home', 'action' => 'signUp'),
                                                                      array('class' => 'btn'));?>
-                          <br><br><br><br>
+
                       </h3>                      
                     </div>
                     <div class="span5">
-                      <img src="img/manymore.png" class="thumbnail">
+                      <img src="img/manymore.png" class="thumbnail" id="homepage">
                     </div>
                   </div>                  
                 </div>
@@ -115,6 +115,7 @@
                   <div class="caption">
                     <p>
                     	A user freindly graphical representation of events i.e. Projects, Leaves onto n attractve calendar.
+                    <br/><br/>
                     </p>
                   </div>
                   <div class="widget-footer">

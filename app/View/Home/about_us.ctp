@@ -1,6 +1,6 @@
 <div class="row-fluid">
 <div class="span12">
-<div class="span9 well">
+<div class="span12 well">
 	<h3>About <i>Project<span style="color: #52a8ec"><strong>Ally</strong></span></i></h3>
 	<i>
 	<p class="justify">
@@ -16,21 +16,5 @@
 	</p>
 	</i>
 
-</div>
-
-<div class="span3" id="carousel-bounding-box">
-	<div id="myCarousel" class="carousel slide">
-    <!-- Carousel items -->
-    	<div class="carousel-inner">
-        <div class="active item" data-slide-number="0"><img src="http://placehold.it/770x300&text=Project Management" /></div>
-        <div class="item" data-slide-number="1"><img src="http://placehold.it/770x300&text=Employee Management" /></div>
-        <div class="item" data-slide-number="2"><img src="http://placehold.it/770x300&text=Bug Tracking" /></div>
-        <div class="item" data-slide-number="3"><img src="http://placehold.it/770x300&text=Leave Management" /></div>
-        <div class="item" data-slide-number="4"><img src="http://placehold.it/770x300&text=Event Management" /></div>
-        </div>
-        <!-- Carousel nav -->
-   <a class="left" href="#myCarousel" data-slide="prev"><i class="icon-chevron-left"></i></a>
-   <a class="right" href="#myCarousel" data-slide="next"><i class="icon-chevron-right"></i></a>
-</div>
 </div>
 </div>                                                </div>

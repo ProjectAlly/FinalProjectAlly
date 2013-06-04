@@ -76,7 +76,12 @@
 					<?php echo $this->Form->end();?>
 				
                 	<h4><i class="icon-question-sign"></i> Already have an account?</h4>
-                <a href="<?php $this->Html->url(array('controller' => 'Home', 'action' => 'signIn')); ?>" class="btn btn-large bottom-space">Signin</a>
+                    <?php
+                        echo $this->Html->link('Sign In',array('controller' => 'Home',
+                                                               'action' => 'signIn'),
+                                                               array('class' => 'btn btn-large bottom-space'));
+                    ?>
+<!--                    <a href="--><?php //$this->Html->url(array('controller' => 'Home', 'action' => 'signIn')); ?><!--" class="btn btn-large bottom-space">Signin</a>-->
                 </div>
             </div>
 		</div>

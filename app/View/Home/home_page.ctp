@@ -5,9 +5,9 @@
 		<div class="span12">
 			<div class="span4 well">
 			<?php 
-			//echo $this->Html->link('Print Document',array('controller' => 'Home', 'action' => 'printDocument'), array('class' => 'btn btn-large btn-primary'));
+			echo $this->Html->link('Print Document',array('controller' => 'Home', 'action' => 'printDocument'), array('class' => 'btn btn-large btn-primary'));
 			?>
-				<a href="http://stemma.in/du/" target="_blank" class="btn btn-large btn-primary">Print Document</a>
+<!--			<a href="http://stemma.in/du/" target="_blank" class="btn btn-large btn-primary">Print Document</a>-->
 			</div>
 						<!-- CODE FOR GENERATED FEEDS -->
 			<div class="span8 well">
