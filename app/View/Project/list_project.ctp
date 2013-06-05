@@ -51,7 +51,11 @@
 										<td>
 											<?php 
 												if ($role==1 || $role==2)
-													echo $this->Html->link('Delete',array('controller' => 'Project', 'action' => 'deleteProject', $project['AddProject']['id']),array('class' => 'btn btn-inverse'));	
+													echo $this->Html->link('Delete',array('controller' => 'Project',
+                                                                                          'action' => 'deleteProject',
+                                                                                          $project['AddProject']['id']),
+                                                                                          array('class' => 'btn btn-inverse'),
+                                                                                          "Are you sure you wish to delete this project");
 											?>
 												
 										</td>
