@@ -1,7 +1,7 @@
       <div class="container">
         <div class="row">
           <div class="span4">
-            <h4><i class="icon-star"></i> Featuers</h4>
+            <h4><i class="icon-star"></i> Features</h4>
             <nav>
               <ul class="quick-links">
               	<li>Leave Management</li>
