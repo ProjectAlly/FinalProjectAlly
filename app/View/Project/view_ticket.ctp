@@ -28,6 +28,22 @@
 				echo '<b>Total Worked Hours: </b>'.$ticket['BugAndFeature']['worked_hours'];
 				echo '<br/>';
 		?>
+		<?php 
+			echo $this->Form->create('BugAndFeature', array('url' => array('controller'=>'Project',
+																	 'action'=>'updateTime',$ticket['BugAndFeature']['id'])));
+			echo "Remaining Hours  ";
+			echo $this->Form->input('remaining_hours',array('type'=>'text',
+															'label'=>false,
+															'div'=>false,
+															'value'=>$ticket['BugAndFeature']['remaining_hours']));
+			echo '<br/>';	
+			echo "Worked Hours  ";
+			echo $this->Form->input('worked_hours',array('type'=>'text',
+														 'label'=>false,
+													     'div'=>false));
+			echo $this->Form->submit('Update Time');
+			echo $this->Form->end();
+		?>
 		<br/>
 		<div class="well">
 		<?php 

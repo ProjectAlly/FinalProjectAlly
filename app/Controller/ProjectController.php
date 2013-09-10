@@ -258,5 +258,10 @@
         public function attachFiles($id = null){
         	$this->Session->write('bug_id', $id);
 		}
+
+        public function updateTime($id = null)
+        {
+            
+        }
 	}
 ?>
