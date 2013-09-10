@@ -124,8 +124,11 @@
                     					'end' => $this->data['Milestone']['due_date'], 
                     					'all_day' => '0', 
                     					'status' => 'Approved',
-                    					'active' => '1' 
+                    					'active' => '1' ,
+                                        'remaining_hours' => $this->data['Milestone']['remaining_hours'],
+                                        'worked_hours' => '0'
                     					);
+                    // echo "<pre>";print_r($event_data);exit;
                     $this->Event->save($event_data);					
                     $this->redirect(array('action' => 'listMilestones', $proj_id));
                 }else

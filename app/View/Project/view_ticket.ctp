@@ -24,6 +24,9 @@
 																array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id']));
 				}	
 				echo '<br/>';
+				echo '<b>Remaining Hours: </b>'.$ticket['BugAndFeature']['remaining_hours']."<br>";
+				echo '<b>Total Worked Hours: </b>'.$ticket['BugAndFeature']['worked_hours'];
+				echo '<br/>';
 		?>
 		<br/>
 		<div class="well">

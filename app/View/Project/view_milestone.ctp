@@ -10,7 +10,9 @@
 				echo $milestone['Milestone']['description'];
 				echo '<br/>';
 				echo '<b>Due date: </b>';
-				echo $this->Time->format('F jS, Y ', $milestone['Milestone']['due_date']);
+				echo $this->Time->format('F jS, Y ', $milestone['Milestone']['due_date'])."<br/>";
+				echo "<b>Remaining Hours: </b>".$milestone['Milestone']['remaining_hours']."<br/>";
+				echo "<b>Total Worked Hours: </b>".$milestone['Milestone']['worked_hours'];
 				echo '<br/>';
 				echo '<br/>';
 				echo '<b>Responsible user: </b>';

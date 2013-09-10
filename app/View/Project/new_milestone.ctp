@@ -55,16 +55,21 @@ echo $this->Html->script('jqBootstrapValidation');
                 </div>
                 <div class="control-group">
                 <?php
-                        echo "<span>Description</span><br/>";
-                        echo $this->Form->textarea('description',array('required'));
+                    echo "<span>Description</span><br/>";
+                    echo $this->Form->textarea('description',array('required'));
                 ?>
-
+                </div>
+                <div class="control-group">
+                <?php 
+                    echo "<span>Remaing Hours</span><br/>";
+                    echo $this->Form->input('remaining_hours',array('required','label'=>false,'type'=>'text'));
+                ?>
                 <?php
                         echo $this->Form->input('project_id',array('label'=>false,
 										                            'type' => 'hidden',
 										                            'value' => $projectid
                         											));
-                        echo $this->Form->submit('Create Milestone',array('class' => 'btn'));
+                        echo "<br>".$this->Form->submit('Create Milestone',array('class' => 'btn'));
                         echo $this->Form->end();
                 ?>
         </div>

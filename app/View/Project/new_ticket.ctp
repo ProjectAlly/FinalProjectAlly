@@ -41,28 +41,41 @@ echo $this->Html->script('jqBootstrapValidation');
                 <tr>
                     <td><label>Reported By</label></td>
                     <td>
-                        <?php
-                            echo $this->Form->input('Reported By',array('label' => false,
-										                                'readonly' => 'readonly',
-										                                'value' => $reportedby
-										                            	));
-                            echo $this->Form->input('reported_by',array('label' => false,
-                                                                        'type' => 'hidden',
-                                                                        'readonly' => 'readonly',
-                                                                        'value' => $id_reportedby
-                                                                        ));
-                        ?>
+                        <div class="control-group">
+                            <?php
+                                echo $this->Form->input('Reported By',array('label' => false,
+    										                                'readonly' => 'readonly',
+    										                                'value' => $reportedby,
+                                                                            'options' => array($id_reportedby => $reportedby)
+    										                            	));
+                            ?>
+                            <p class="help-block"></p>
+                        </div>
                     </td>
                 </tr>
+                <!-- <tr>
+                    <td>
+                        <?php
+                            // echo $this->Form->input('reported_by',array('label' => false,
+                            //                                             'type' => 'hidden',
+                            //                                             'readonly' => 'readonly',
+                            //                                             'value' => $id_reportedby
+                            //                                             ));
+                        ?>
+                    </td>
+                </tr -->
                 <tr>
                     <td><label>Status</label></td>
                     <td>
-                        <?php
-                            echo $this->Form->input('status',array( 'label'=>false,
-									                                'readonly' => 'readonly',
-									                                'options' => array('3' => 'new')
-									                            ));
-                        ?>
+                        <div class="control-group">
+                            <?php
+                                echo $this->Form->input('status',array( 'label'=>false,
+    									                                'readonly' => 'readonly',
+    									                                'options' => array('3' => 'new')
+    									                            ));
+                            ?>
+                            <p class="help-block"></p>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -120,6 +133,20 @@ echo $this->Html->script('jqBootstrapValidation');
 									                                'empty' => '=== Select a estimated size  ===',
                                                                     'required'
 									                            	));
+                        ?>
+                        <p class="help-block"></p>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Estimated Hour</label></td>
+                    <td>
+                    <div class="control-group">
+                        <?php
+                            echo $this->Form->input('remaining_hours',array('label'=>false,
+                                                                    'type'=>'text',
+                                                                    'required'
+                                                                    ));
                         ?>
                         <p class="help-block"></p>
                     </div>
