@@ -41,7 +41,7 @@
 			echo $this->Form->input('worked_hours',array('type'=>'text',
 														 'label'=>false,
 													     'div'=>false));
-			echo $this->Form->submit('Update Time');
+			echo $this->Form->submit('Update Time',array('class'=>'btn'));
 			echo $this->Form->end();
 		?>
 		<br/>

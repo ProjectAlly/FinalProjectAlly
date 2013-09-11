@@ -259,9 +259,27 @@
         	$this->Session->write('bug_id', $id);
 		}
 
-        public function updateTime($id = null)
-        {
-            
+        public function updateTime($id = null){
+            $this->BugAndFeature->id = $id;
+            $milestone_id = $this->BugAndFeature->field('milestone_id');
+                $milestone_time = $this->Milestone->find('first',array('fields'=>array('remaining_hours','worked_hours'),
+                                                                     'conditions'=>array('id' => $milestone_id)));
+                //echo "<pre>";print_r($milestone_time);exit;
+            if($this->BugAndFeature->save($this->request->data)){
+                $this->Session->setFlash('New ticket created successfully.', 'success');
+                // $milestone_id = $this->BugAndFeature->field('milestone_id');
+                $milestone_id = $this->BugAndFeature->field('milestone_id');
+                $milestone_time = $this->Milestone->find('first',array('fields'=>array('remaining_hours','worked_hours'),
+                                                                     'conditions'=>array('id' => $milestone_id)));
+                $milestone_time['Milestone']['remaining_hours'] = $milestone_time['Milestone']['remaining_hours'] - $this->request->data['BugAndFeature']['worked_hours'] ;
+                $milestone_time['Milestone']['worked_hours'] = $milestone_time['Milestone']['worked_hours'] + $this->request->data['BugAndFeature']['worked_hours'] ;
+                $this->Milestone->id = $milestone_id;
+                $this->Milestone->save($milestone_time);
+                //echo "<pre>";print_r($milestone_time);exit;
+                $this->redirect(array('controller' => 'Project', 'action' => 'viewTicket', $id));
+            }else{
+                $this->Session->setFlash('Something went wrong...Please try again', 'error');
+            }
         }
 	}
 ?>
